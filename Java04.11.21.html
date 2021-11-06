@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var arr = [
+            circle1 = {
+                X1: 1,
+                Y1: 2,
+                X2: 3,
+                Y2: 4,
+                X3: 5,
+                Y3: 6,
+                X4: 7,
+                Y4: 8,
+                R1: 10,
+                TotalDots: 4
+            },
+            circle2 = {
+                X1: 12,
+                Y1: 13,
+                X2: 14,
+                Y2: 15,
+                X3: 16,
+                Y3: 17,
+                X4: 18,
+                Yy: 19,
+                R2: 22,
+                TotalDots: 4
+            },
+            circle3 = {
+                X1: 24,
+                Y1: 25,
+                X2: 26,
+                Y2: 27,
+                X3: 28,
+                Y3: 29,
+                X4: 30,
+                Y4: 31,
+                R3: 34,
+                TotalDots: 4
+            }
+        ];
+        var str = "";
+        function RadiusChanger(circle1, circle2, circle3) {             // Задание 1
+            var a = +prompt("Введите номер окружности от 1 до 3");
+            var b = +prompt("Введите занчение на которое меняем изначельный радиус окружности");
+            if (a == 1)
+                alert("Радиус первой окружности" + "=" + b);
+            else
+                if (a == 2)
+                    alert("Радиус второй окружности" + "=" + b);
+                else
+                    if (a == 3)
+                        alert("Радиус третьей окружности" + "=" + b);
+                    else
+                        alert("Вы ввели неверное значение")
+
+        }
+        RadiusChanger(circle1, circle2, circle3);
+ 
+        function PlusSircle(arr) {         // Задание 2
+            var c = +prompt("Хотите добавить новую окржность ?" + "\n1. - Да" + "\n2. - Нет");
+            alert("Укажите занчения 4 точек и их радус !");
+            var circle4 = {
+                X1: strNewSircleX1 = +prompt("Укажите занчение X1"),
+                Y1: strNewSircleY1 = +prompt("Укажите занчение Y1"),
+                X2: strNewSircleX2 = +prompt("Укажите занчение X2"),
+                Y2: strNewSircleY2 = +prompt("Укажите занчение Y2"),
+                X3: strNewSircleX3 = +prompt("Укажите занчение X3"),
+                Y3: strNewSircleY3 = +prompt("Укажите занчение Y3"),
+                X4: strNewSircleX4 = +prompt("Укажите занчение X4"),
+                Y4: strNewSircleY4 = +prompt("Укажите занчение Y4"),
+                TotalDots: strNewTotalDots = +prompt("Укажите количество точек")
+            };
+            arr.push(circle4);
+            for (var tempProperty in circle4)
+                str += "\n" + tempProperty + " - " + circle4[tempProperty];
+            alert(str);
+ 
+            function totalDots(arr) {      
+                var str1 = "";
+                var str2 = "";
+                var str3 = "";
+                var str4 = "";
+                var str5 = "";
+                for (var tempProperty0 in circle1)
+                    str1 += "\n" + "ПЕРВЫЙ КРУГ" + "\n" + "\n" + tempProperty0 + " - " + circle1[tempProperty0] + "\n";
+                for (var tempProperty1 in circle2)
+                    str2 += "\n" + "ВТОРОЙ КРУГ" + "\n" + "\n" + tempProperty1 + " - " + circle2[tempProperty1] + "\n";
+                for (var tempProperty2 in circle3)
+                    str3 += "\n" + "ТРЕТИЙ КРУГ" + "\n" + "\n" + tempProperty2 + " - " + circle3[tempProperty2] + "\n";
+                for (var tempProperty3 in circle4)
+                    str4 += "\n" + "ЧЕТВЕРТЫЙ КРУГ" + "\n" + "\n" + tempProperty3 + " - " + circle4[tempProperty3] + "\n";
+                alert(str1 + str2 + str3 + str4);
+
+                function Total_Of_All_Dots(arr) {    // Задание 3
+                    str5 += circle1.TotalDots + circle2.TotalDots + circle3.TotalDots + circle4.TotalDots;
+                    alert(str5)
+
+                    function NamesAndLength(arr){      // Задание 4
+                        alert(str1 + "\n" + str2 + "\n" + str3 + "\n" + str4 + "\n" + "Всего точек - " + str5);
+                    }
+                    NamesAndLength(arr);
+                }
+                Total_Of_All_Dots(arr);
+            }
+            totalDots(arr);
+        }
+        PlusSircle(arr);
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
